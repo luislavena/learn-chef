@@ -2,9 +2,9 @@ name "rubies"
 description "Setup multiple Ruby installations using rbenv"
 
 run_list(
+  "recipe[ruby_build]",
   "recipe[rbenv::system]",
-  "recipe[rbenv_vars]",
-  "recipe[ruby_build]"
+  "recipe[rbenv_vars]"
 )
 
 default_attributes(
