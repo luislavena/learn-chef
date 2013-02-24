@@ -9,3 +9,6 @@ cookbook "htop"
 cookbook "openssh"
 cookbook "sudo"
 cookbook "mysql"
+cookbook "postgresql",
+  :github => "phlipper/chef-postgresql",
+  :ref => "0.10.1"
