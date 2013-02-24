@@ -15,6 +15,7 @@ Vagrant::Config.run do |config|
       chef.roles_path = "chef/roles"
       chef.add_role "vagrant"
       chef.add_role "db"
+      chef.add_role "app"
     end
   end
 
