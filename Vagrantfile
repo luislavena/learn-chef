@@ -13,6 +13,7 @@ Vagrant::Config.run do |config|
 
     app_db.vm.provision :chef_solo do |chef|
       chef.roles_path = "chef/roles"
+      chef.data_bags_path = "chef/data_bags"
       chef.add_role "vagrant"
       chef.add_role "db"
       chef.add_role "app"
