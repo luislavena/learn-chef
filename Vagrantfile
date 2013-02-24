@@ -9,11 +9,12 @@ Vagrant::Config.run do |config|
     # Use more RAM to assist with setting up lots of infra
     app_db.vm.customize ["modifyvm", :id, "--memory", "768"]
 
-    app_db.vm.network :hostonly, "33.33.33.10"
+    app_db.vm.network :hostonly, "172.16.10.10"
 
     app_db.vm.provision :chef_solo do |chef|
       chef.roles_path = "chef/roles"
       chef.data_bags_path = "chef/data_bags"
+
       chef.add_role "vagrant"
       chef.add_role "db"
       chef.add_role "app"
